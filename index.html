@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .utilist {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #666;
+            border-radius: 20px;
+            height: 400px;
+        }
+
+        .utilist li {
+            height: 100px;
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .imgeft {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .imglist {
+            width: 300px;
+            overflow-x: hidden;
+        }
+
+        .imglist .img {
+            width: 100%;
+            height: 300px;
+            opacity: 0;
+            transition: opacity 0.25s ease-in-out;
+        }
+    </style>
+</head>
+<body style="min-height: 1000px;">
+<ul class="utilist">
+    <li>
+        <img class="imgeft"
+             src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_09b6296.png"
+             alt="">
+        <p class="text">这是一段文字一段文字</p>
+    </li>
+</ul>
+<div class="css-live-wrap">
+    <svg width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <text class="liquidFillGaugeText" text-anchor="middle" font-size="42px" transform="translate(100,120)"
+              style="fill: #000">50.0%
+        </text>
+        <!-- Wave -->
+        <g id="wave">
+            <path id="wave-2" fill="rgba(154, 205, 50, .8)"
+                d="M 0 100 C 133.633 85.12 51.54 116.327 200 100 A 95 95 0 0 1 0 100 Z">
+                <animate dur="5s" repeatCount="indefinite" attributeName="d" attributeType="XML" values="M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z; M0 100 C145 100, 41 100, 200 100 A95 95 0 0 1 0 100 Z;M0 100 C90 28, 92 179, 200 100 A95 95 0 0 1 0 100 Z">
+                </animate>
+            </path>
+        </g>
+        <circle cx="100" cy="100" r="80" stroke-width="10" stroke="white" fill="transparent"></circle>
+        <circle cx="100" cy="100" r="90" stroke-width="20" stroke="yellowgreen" fill="none" class="percentage-pie-svg"></circle>
+    </svg>
+</div>
+<input id="upload" type="file"/>
+<img id="preview" src="" alt="预览"/>
+<!-- <script src="./function/function-util.js"></script> -->
+<script type="module" src="./array/快速排序.js"></script>
+<script>
+    const upload = document.querySelector("#upload");
+    const preview = document.querySelector("#preview");
+    upload.onchange = function () {
+        const file = upload.files[0]; //File对象
+        const src = URL.createObjectURL(file);
+        preview.src = src;
+    };
+</script>
+</body>
+</html>
